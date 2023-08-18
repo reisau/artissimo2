@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Header = styled.header`
+export const HeaderHome = styled.header`
      width: 100%;
     height: 50px;
      z-index: 9999;
@@ -59,15 +59,15 @@ export const SecaoIntroducao = styled.section`
   background-color: white;
   border-radius: 20px;
   margin: 5px 50px ;
-  padding-top: 3px ;
-  padding-bottom: 3px ;
+  padding: 3px;
   width: 55%;
-  height: 100%;
+  height: 170px;
   text-align: center;
 `
 
 export const IntroducaoTexto = styled.p`
-  padding: 20px;
+  padding: 3px; 
+  padding-bottom: 
   font-style: normal;
   font-weight: 400;
   font-size: 18px;

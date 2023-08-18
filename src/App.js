@@ -1,14 +1,17 @@
-// import './App.css';
-import Cadastro from './componentes/Cadastro/Cadastro';
-import StyledGlobal, { CorFundo } from './styledGlobal';
-import Home from "./componentes/Home/Home";
+import Cadastro from "./componentes/Paginas/Cadastro/Cadastro.js"
+import {GlobalStyle, CorFundo} from './styledGlobal';
+import React from "react"
+import Rota from "./componentes/componentes_gerais/Rotas/Rotas"
+import Home from "./componentes/Paginas/Home/Home.js";
+
 
 function App() {
   return (
     <>
       <CorFundo>
-        <StyledGlobal />
-        {/* <Cadastro /> */}
+        <GlobalStyle />
+        <Rota/>
+        <Cadastro />
         <Home/>
       </CorFundo>
     </>
