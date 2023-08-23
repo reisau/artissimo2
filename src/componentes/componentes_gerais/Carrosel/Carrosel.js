@@ -1,46 +1,48 @@
-// import React from 'react'
-// import {useState} from "react"
-// import imagem1 from "../../../assets/imagens/imagem1.jpg"
-// import imagem2 from "../../../assets/imagens/imagem2.jpg"
+import React from 'react'
+import {useState} from "react"
+import styled from "styled-components"
+import imagem1 from "../../../assets/imagens/imagem1.jpg"
+import imagem2 from "../../../assets/imagens/imagem2.jpg"
+import imagem3 from "../../../assets/imagens/imagem3.jpg"
 
-// export default function Carrossel(){
-//     const [Carrosel, SetCarrosel] = useState(imagem1)
+const ImgCarrosel = styled.img`
+    display: block;
+`
 
-//     return(
-//         <>
-//         <img src={Carrosel} alt=""></img>
-//         <button onClick={()=> SetCarrosel(imagem2)}> </button>
-//         </>
-//     )
-// }
+export default function Carrossel(){
+    const [Carrosel, SetCarrosel] = useState(imagem1)
 
-// import {Swiper, SwiperSlide} from 'swiper/react'
-// import {Navigation, Pagination, Autoplay} from 'swiper/modules'
-// import 'swiper/css'
-// import 'swiper/css/navigation'
-// import 'swiper/css/pagination'
-// import "./main.css"
+    const ImagensDireito = () => {
+        if (Carrosel === imagem1){
+            SetCarrosel(imagem2)
+            
+        }
+        else if (Carrosel === imagem2){
+            SetCarrosel(imagem3)
+        }
+        else {
+            SetCarrosel(imagem1)
+        }
+    }
+    const ImagensEsquerdo = () => {
+        if (Carrosel === imagem3){
+            SetCarrosel(imagem2)
+        }
+        else if (Carrosel === imagem2){
+            SetCarrosel(imagem1)
+        }
+        else {
+            SetCarrosel(imagem3)
+        }
+    }
 
+    return(
+        <>
+        <ImgCarrosel src={Carrosel} alt=""/>
+        <button onClick={ ImagensEsquerdo} > esquerdo</button>
+        <button onClick={ ImagensDireito}  > direito</button>
 
-// export default class Carrosel extends React.Component {
-//     render() {
-//         return (
-//             <Swiper modules= {[Navigation, Pagination, Autoplay]}
-//             autoplay={{delay:2000}}
-//             navigation={true}
-//             pagionatio={{clickable:true}}
-//             className="swiper-container"
-//             >
-//                 <SwiperSlide className="slide-item"> 
-//                     <img src={imagem1}/>
-//                 </SwiperSlide>
-//                 <SwiperSlide className="slide-item">
-//                     <img src={imagem2} height="1080px" widht="1080px"/>
-//                 </SwiperSlide>
-//                 <SwiperSlide className="slide-item">
-//                     <img src={imagem3} height="1080px" widht="1080px"/>
-//                 </SwiperSlide>
-//             </Swiper>
-//         )
-//     }
-// }
+        </>
+    )
+}
+

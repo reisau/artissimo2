@@ -1,4 +1,4 @@
-// import Carrosel from "../../componentes_gerais/Carrosel/Carrosel"
+import Carrosel from "../../componentes_gerais/Carrosel/Carrosel"
 import logo from "../../../assets/imagens/logo.png"
 import { HeaderHome, TituloH, TrocaPagina, ContainerHLT, LogoTituloH, SecaoIntroducao, IntroducaoTexto, ImgH } from "./styledH"
 import Footer from "../../componentes_gerais/Footer/Footer.js"
@@ -34,7 +34,7 @@ function Home() {
       </HeaderHome>
 
       <ContainerHLT>
-        {/* <Carrosel /> */}
+        <Carrosel />
         <LogoTituloH>
           <ImgH srcset={logo}/>
           <TituloH> ARTÍSSIMO </TituloH>
