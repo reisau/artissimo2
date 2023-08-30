@@ -3,40 +3,32 @@ import logo from "../../../assets/imagens/logo.png"
 import { HeaderHome, TituloH, TrocaPagina, ContainerHLT, LogoTituloH, SecaoIntroducao, IntroducaoTexto, ImgH } from "./styledH"
 import Footer from "../../componentes_gerais/Footer/Footer.js"
 import React from "react"
-import {Link} from "react-router-dom"
-import styled from "styled-components"
-import {GlobalStyle} from "../../../styledGlobal"
-import '@fontsource-variable/josefin-sans'
+import {useNavigate } from "react-router-dom"
+import { GlobalStyle } from "../../../styledGlobal"
 
-
-export const StyledLink = styled(Link)`
-  text-decoration:none;
-`
 
 function Home() {
-  // const navigate = useNavigate()
+  
+  const navigate = useNavigate()
+  const gotoCadastro = () => {
+    navigate('/cadastro')
+  }
 
-  // const GoToCadastro = () =>{
-  //     navigate('/cadastro')
-  // }
-
-  // const GoToLogin = () =>{
-  //   navigate('/login')
-  // }
-
+  
   return (
     <>
-    <GlobalStyle/>
+      <GlobalStyle />
       <HeaderHome>
         <nav>
-          <StyledLink to="/cadastro"><TrocaPagina>Cadastre-se</TrocaPagina></StyledLink> <TrocaPagina> Login </TrocaPagina>
+        <TrocaPagina onClick={gotoCadastro}>Cadastre-se</TrocaPagina>
+          <TrocaPagina> Login </TrocaPagina>
         </nav>
       </HeaderHome>
 
       <ContainerHLT>
         <Carrosel />
         <LogoTituloH>
-          <ImgH srcset={logo}/>
+          <ImgH srcset={logo} />
           <TituloH> ARTÍSSIMO </TituloH>
         </LogoTituloH>
       </ContainerHLT>
@@ -49,7 +41,7 @@ function Home() {
           erat, dictum nec euismod sit amet, consequat a enim.
         </IntroducaoTexto>
       </SecaoIntroducao>
-      <Footer/>
+      <Footer />
     </>
   )
 }

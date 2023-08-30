@@ -28,7 +28,7 @@ export const FormC = styled.form`
 `
 export const EscolhaC = styled.p`
     font-style: normal;
-    font-weight: 100;
+    font-weight: 500;
     color: #A14A76;
     display: inline;
     padding: 40px;

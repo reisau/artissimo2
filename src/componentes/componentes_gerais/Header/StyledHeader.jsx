@@ -11,4 +11,5 @@ export const LogoC = styled.img`
     padding-left:3px; 
     position: absolute;
     z-index: 999;
+    cursor: pointer;
 `

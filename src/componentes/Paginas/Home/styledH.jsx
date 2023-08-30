@@ -7,7 +7,7 @@ export const HeaderHome = styled.header`
     background-color: #F786AA; 
 `
 
-export const TrocaPagina = styled.h2`
+export const TrocaPagina = styled.button`
     float: right;
     justify-content:flex-end;
     display: inline;
@@ -18,6 +18,8 @@ export const TrocaPagina = styled.h2`
     font-size: 25px;
     color: #FFECE8;
     cursor: pointer;
+    border:none;
+    background-color:#F786AA;
 `
 
 export const TituloH = styled.h1`

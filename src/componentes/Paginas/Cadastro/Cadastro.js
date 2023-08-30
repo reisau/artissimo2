@@ -1,12 +1,17 @@
-// import './Cadastro.css'
 import Footer from "../../componentes_gerais/Footer/Footer"
 import  Header  from "../../componentes_gerais/Header/Header.js"
 import { ContainerC, EscolhaC, FormC, TituloC, InputBotao, InputInfo, LabelC } from "./styledC"
 import React from "react"
 import '@fontsource-variable/josefin-sans'
+import { useNavigate } from "react-router-dom"
 
 
 function Cadastro() {
+    const navigate = useNavigate()
+    const gotoArtista= () => {
+      navigate('/artista')
+    }
+  
     return (
         <>
           <Header/>
@@ -20,7 +25,7 @@ function Cadastro() {
                     <InputInfo type="text" />
                     <LabelC>Senha</LabelC>
                     <InputInfo type="password" />
-                    <InputBotao>Cadastrar</InputBotao>                
+                    <InputBotao onClick={gotoArtista}>Cadastrar</InputBotao>                
                 </FormC>
 
             </ContainerC>
