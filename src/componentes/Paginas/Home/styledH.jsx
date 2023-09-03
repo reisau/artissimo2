@@ -21,6 +21,10 @@ export const TrocaPagina = styled.button`
     border:none;
     background-color:#F786AA;
     font-family: Josefin sans;
+
+    &:hover{
+      color:#FFFFFF;
+    }
 `
 
 export const TituloH = styled.h1`

@@ -1,37 +1,65 @@
 import styled from "styled-components"
 
-// export const HeaderC = styled.header`
-//     background-color: #FFA8A9;
-//     height: 60px;
-// `
-
-// export const logoC = styled.img`
-//     width: 60px;
-//     height: 60px;
-//     padding-left:3px; 
-// `
-
  export const ContainerC = styled.div`
     height: 400px;
     width: 300px;
     background-color: #FBC2B5;
-    display: flex;
-    justify-content: center;
     margin-left: auto;
     margin-right: auto;
     margin-top:20px;
     border-radius: 30px;
+    padding: 20px;
+`
+export const DivTudo = styled.div`
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    display:flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
 `
 
+export const DivArtista = styled.div`
+    height: 400px;
+    width: 300px;
+    background-color: #FBC2B5;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:20px;
+    padding: 20px;
+    border-radius: 30px;
+    &:not(:target){
+        display:none;
+    }
+`
 export const FormC = styled.form`
     padding: 10px;
+    display:flex;
+    flex-direction: column;
 `
-export const EscolhaC = styled.p`
+export const FormEstilos = styled.form`
+    padding: 10px;
+    display:flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    flex-direction: row;
+    align-content: center;
+`
+export const EscolhaC = styled.a`
+    text-decoration:none;
     font-style: normal;
     font-weight: 500;
     color: #A14A76;
+    padding-top: 30px;
     display: inline;
     padding: 40px;
+    cursor: pointer;
+
+    &:hover{
+        text-decoration-line: underline;
+        text-d7ecoration-color: #8c3c65;
+        color: #8c3c65;
+    }
 `
 export const TituloC = styled.h2`
     font-style: normal;
@@ -65,13 +93,17 @@ export const InputBotao = styled.button`
     width: 200px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: 10px;
     background-color: #F786AA;
     cursor: pointer;
     font-size: 17px;
     color:white;
     border-radius: 10px;
     border: none;
+
+    &:hover{
+        background-color: #eb7197;
+    }
 `
 
 

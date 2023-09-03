@@ -13,7 +13,7 @@ function PaginaArtista() {
         <>
             <EstiloTudo>
                 <ContainerLogo>
-                    <LogoArtista src={logo}/>
+                    <LogoArtista src={logo} onClick={Voltar}/>
                     <TextoLogo onClick={Voltar}>ARTÍSSIMO</TextoLogo>
                 </ContainerLogo>
                 

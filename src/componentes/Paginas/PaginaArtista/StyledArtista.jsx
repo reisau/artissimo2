@@ -6,21 +6,22 @@ export const ContainerLogo = styled.div`
     background-color:#FFA8A9;
     display: flex;
     flex-direction: row;
-    cursor: pointer;
-    
 `
 export const LogoArtista = styled.img`
     widht: 10vh;
     height: 10vh;
+    cursor: pointer;
 `
 export const TextoLogo = styled.h1`
     font-size: 14px;
-    padding-left: 10px;
-    padding-top: 20px;
+    margin-left: 10px;
+    margin-top: 23px;
+    align-self: start;
     color: #A14A76;
     text-decoration-line: underline;
     text-decoration-color: #A14A76;
     text-shadow: -1px 1px white;
+    cursor: pointer;
 `
 
 export const ContainerFiltroPFP = styled.div`

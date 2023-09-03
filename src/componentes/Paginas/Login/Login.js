@@ -20,6 +20,10 @@ const BotaoEntrar = styled.button`
     color:white;
     border-radius: 10px;
     border: none;
+
+        &:hover{
+        background-color: #eb7197;
+    }
 `
 
 function Login(){
@@ -37,7 +41,7 @@ function Login(){
                         <LabelC>E-mail</LabelC>
                         <InputInfo type="email" />
                         <LabelC>Senha</LabelC>
-                        <InputInfo type="text" />
+                        <InputInfo type="password" />
                         <BotaoEntrar onClick={gotoArtista}>Entrar</BotaoEntrar>
                     </FormC>
                 </ContainerC>
