@@ -20,6 +20,7 @@ export const TrocaPagina = styled.button`
     cursor: pointer;
     border:none;
     background-color:#F786AA;
+    font-family: Josefin sans;
 `
 
 export const TituloH = styled.h1`
@@ -48,13 +49,24 @@ export const ContainerHLT = styled.div`
   background-color: #FFA8A9;
   border-radius: 0px 0px 56px 56px;
 `
+export const StyledCarroselContainer = styled.div`
+  width: 215vh;
+  display: flex;
+  justify-content: end;
+  align-self: stretch;
+  padding-top: 50px;
+  margin-left: 250px;
+`
 
 export const LogoTituloH = styled.div`
-  position: absolute;
+  // position: absolute;
   top: 6%;
   padding: 0;
   display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
   justify-content: start;
+  flex-direction: row;
 `
 
 export const SecaoIntroducao = styled.section`
@@ -65,11 +77,13 @@ export const SecaoIntroducao = styled.section`
   width: 55%;
   height: 170px;
   text-align: center;
+  display:flex;
+  align-items: center;
 `
 
 export const IntroducaoTexto = styled.p`
-  padding: 3px; 
-  padding-bottom: 
+  padding-top: auto; 
+  padding-bottom: auto;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;

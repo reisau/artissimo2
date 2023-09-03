@@ -1,10 +1,11 @@
 import Carrosel from "../../componentes_gerais/Carrosel/Carrosel"
 import logo from "../../../assets/imagens/logo.png"
-import { HeaderHome, TituloH, TrocaPagina, ContainerHLT, LogoTituloH, SecaoIntroducao, IntroducaoTexto, ImgH } from "./styledH"
+import { StyledCarroselContainer, HeaderHome, TituloH, TrocaPagina, ContainerHLT, LogoTituloH, SecaoIntroducao, IntroducaoTexto, ImgH } from "./styledH"
 import Footer from "../../componentes_gerais/Footer/Footer.js"
 import React from "react"
 import {useNavigate } from "react-router-dom"
 import { GlobalStyle } from "../../../styledGlobal"
+
 
 
 function Home() {
@@ -13,6 +14,10 @@ function Home() {
   const gotoCadastro = () => {
     navigate('/cadastro')
   }
+  const gotoLogin = () => {
+    navigate('/login')
+  }
+
 
   
   return (
@@ -21,16 +26,18 @@ function Home() {
       <HeaderHome>
         <nav>
         <TrocaPagina onClick={gotoCadastro}>Cadastre-se</TrocaPagina>
-          <TrocaPagina> Login </TrocaPagina>
+        <TrocaPagina onClick={gotoLogin}> Login </TrocaPagina>
         </nav>
       </HeaderHome>
 
       <ContainerHLT>
-        <Carrosel />
-        <LogoTituloH>
-          <ImgH srcset={logo} />
-          <TituloH> ARTÍSSIMO </TituloH>
-        </LogoTituloH>
+          <LogoTituloH>
+              <ImgH srcset={logo} />
+              <TituloH> ARTÍSSIMO </TituloH>
+          <StyledCarroselContainer>
+            <Carrosel />
+          </StyledCarroselContainer>
+          </LogoTituloH>
       </ContainerHLT>
       <SecaoIntroducao>
         <IntroducaoTexto>

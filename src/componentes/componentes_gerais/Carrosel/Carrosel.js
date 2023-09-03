@@ -1,9 +1,10 @@
 import React from 'react'
 import {useState} from "react"
 import styled from "styled-components"
-import imagem1 from "../../../assets/imagens/imagem1.jpg"
-import imagem2 from "../../../assets/imagens/imagem2.jpg"
-import imagem3 from "../../../assets/imagens/imagem3.jpg"
+import imagem1 from "../../../assets/imagens/imagem1.png"
+import imagem2 from "../../../assets/imagens/imagem2.png"
+import imagem3 from "../../../assets/imagens/imagem3.png"
+import {StyledBotaoDireito, StyledBotaoEsquerdo, ContainerCarrosel} from "./StyledCarrosel"
 
 const ImgCarrosel = styled.img`
     display: block;
@@ -38,10 +39,11 @@ export default function Carrossel(){
     
     return(
         <>
-        <ImgCarrosel src={Carrosel} alt=""/>
-        <button onClick={ ImagensEsquerdo} > esquerdo</button>
-        <button onClick={ ImagensDireito}  > direito</button>
-
+        <ContainerCarrosel>
+            <StyledBotaoEsquerdo onClick={ ImagensEsquerdo} alt="esquerdo"/>
+            <ImgCarrosel src={Carrosel} alt=""/>
+            <StyledBotaoDireito onClick={ ImagensDireito}alt="direito"/>
+        </ContainerCarrosel>
         </>
     )
 }

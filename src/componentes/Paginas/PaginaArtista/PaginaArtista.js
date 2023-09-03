@@ -1,15 +1,34 @@
 import React from "react"
-import { ContainerFiltroPFP, ContainerLogo, Tabela, EstiloTudo, EstiloColunas, Categorias, Colunas, ColunasInfo, EstiloTabela } from "./StyledArtista"
+import logo from "../../../assets/imagens/logo.png"
+import {useNavigate} from "react-router-dom"
+import {Opcoes, Filtro, TextoLogo, LogoArtista, ContainerFiltroPFP, ContainerLogo, Tabela, EstiloTudo, EstiloColunas, Categorias, Colunas, ColunasInfo, EstiloTabela } from "./StyledArtista"
 
 
 function PaginaArtista() {
+    const navigate = useNavigate()
+    const Voltar = () => {
+      navigate(-2)
+    }
     return (
         <>
             <EstiloTudo>
-                <ContainerLogo>logo!</ContainerLogo>
-                <ContainerFiltroPFP> FILTRO</ContainerFiltroPFP>
+                <ContainerLogo>
+                    <LogoArtista src={logo}/>
+                    <TextoLogo onClick={Voltar}>ARTÍSSIMO</TextoLogo>
+                </ContainerLogo>
+                
 
                 <EstiloTabela>
+                    <ContainerFiltroPFP> 
+                        <Filtro>
+                            <Opcoes value="hide">Filtro</Opcoes>
+                            <Opcoes value="realismo">Realismo</Opcoes>
+                            <Opcoes value="semirealismo">Semi-realismo</Opcoes>
+                            <Opcoes value="cartoon">Cartoon</Opcoes>
+                            <Opcoes value="anime">Anime</Opcoes>
+                            <Opcoes value="tradicional">Tradicional</Opcoes>
+                        </Filtro>
+                     </ContainerFiltroPFP>
                     <Tabela>
 
 
@@ -43,5 +62,4 @@ function PaginaArtista() {
     )
 
 }
-console.log(PaginaArtista)
 export default PaginaArtista

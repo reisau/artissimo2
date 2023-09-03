@@ -58,6 +58,7 @@ export const InputInfo = styled.input`
 `
 
 export const InputBotao = styled.button`
+    font-family: Josefin sans;
     display: block;
     padding: auto;
     height: 30px;
