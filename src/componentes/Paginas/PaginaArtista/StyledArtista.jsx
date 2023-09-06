@@ -29,13 +29,14 @@ export const ContainerFiltroPFP = styled.div`
     height: 60px;
     align-self: stretch;
     display:flex;
-    justify-content:center;
+    justify-content: space-around;
 `
 export const Filtro = styled.select`
     border:none;
     font-family: Josefin sans;
     width: 90%;
     height: 30px;
+    margin: 20px;
     border-radius: 20px;
     padding-left: 10px;
     margin-top: auto;
@@ -78,8 +79,8 @@ export const EstiloColunas = styled.div`
 export const Categorias = styled.th`
     color: #A14A76;
     border-bottom: 1px solid #A14A76;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
     background-color: #ffffff;
     
 `
@@ -88,8 +89,8 @@ export const Colunas = styled.tr`
     border: 1px solid #A14A76;
 `
 export const ColunasInfo = styled.td`
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
     padding-top: 5px;
     padding-bottom: 5px;
 `

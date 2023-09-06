@@ -21,21 +21,33 @@ function PaginaArtista() {
                 <EstiloTabela>
                     <ContainerFiltroPFP> 
                         <Filtro>
-                            <Opcoes value="hide">Filtro</Opcoes>
+                            <Opcoes value="0">Estilo</Opcoes>
                             <Opcoes value="realismo">Realismo</Opcoes>
                             <Opcoes value="semirealismo">Semi-realismo</Opcoes>
                             <Opcoes value="cartoon">Cartoon</Opcoes>
                             <Opcoes value="anime">Anime</Opcoes>
-                            <Opcoes value="tradicional">Tradicional</Opcoes>
+                        </Filtro>
+                        <Filtro>
+                            <Opcoes value="0">Mídia</Opcoes>
+                            <Opcoes value="Digital">Digital</Opcoes>
+                            <Opcoes value="Tradicional">Tradicional</Opcoes>
+                        </Filtro>
+                        <Filtro>
+                            <Opcoes value="0">Material</Opcoes>
+                            <Opcoes value="Grafite">Grafite</Opcoes>
+                            <Opcoes value="Aquarela">Aquarela</Opcoes>
+                            <Opcoes value="Acrílica">Acrílica</Opcoes>
+                            <Opcoes value="Lápis coloridos">Lápis coloridos</Opcoes>
                         </Filtro>
                      </ContainerFiltroPFP>
                     <Tabela>
-
-
                         <EstiloColunas>
                             <Colunas>
                                 <Categorias>Artista</Categorias>
                                 <Categorias>Estilo</Categorias>
+                                <Categorias>Mídia</Categorias>
+                                <Categorias>Material</Categorias>
+                                <Categorias>Redes sociais</Categorias>
                             </Colunas>
                             <Colunas>
                                 <ColunasInfo>
@@ -44,6 +56,15 @@ function PaginaArtista() {
                                 <ColunasInfo>
                                     semi-realista
                                 </ColunasInfo>
+                                <ColunasInfo>
+                                    Digital
+                                </ColunasInfo>
+                                <ColunasInfo>
+                                    -
+                                </ColunasInfo>
+                                <ColunasInfo>
+                                    Instagram(link)
+                                </ColunasInfo>
                             </Colunas>
                             <Colunas>
                                 <ColunasInfo>
@@ -51,6 +72,15 @@ function PaginaArtista() {
                                 </ColunasInfo>
                                 <ColunasInfo>
                                     anime
+                                </ColunasInfo>
+                                <ColunasInfo>
+                                    Tradicional
+                                </ColunasInfo>
+                                <ColunasInfo>
+                                    Grafite
+                                </ColunasInfo>
+                                <ColunasInfo>
+                                    Instagram(link) X
                                 </ColunasInfo>
                             </Colunas>
                         </EstiloColunas>

@@ -1,33 +1,70 @@
 import Footer from "../../componentes_gerais/Footer/Footer"
 import  Header  from "../../componentes_gerais/Header/Header.js"
-import { FormEstilos, DivTudo, DivArtista, ContainerC, EscolhaC, FormC, TituloC, InputBotao, InputInfo, LabelC } from "./styledC"
+import { Coluna, CheckboxEstilo, FormEstilos, DivTudo, DivArtista, ContainerC, EscolhaC, FormC, TituloC, InputBotao, InputInfo, LabelC } from "./styledC"
 import React from "react"
 import '@fontsource-variable/josefin-sans'
 import { useNavigate } from "react-router-dom"
+import {useState} from "react"
+
 function Cadastro() {
     const navigate = useNavigate()
     const gotoArtista= () => {
       navigate('/artista')
     }
+
+    const [Confirmar, setConfirmar] = useState('Confirmar')
     return (
         <>
           <Header/>
           <DivTudo>
                 <DivArtista id="mostrar" >
+                     <TituloC>Escolha seus estilos:</TituloC>
                     <FormEstilos>
-                        <TituloC>Escolha seus estilos:</TituloC>
-                        <InputInfo type="checkbox" value="Bike"/>
-                        <label> I have a bike</label>
-                        <InputInfo type="checkbox" value="Car"/>
-                        <label> I have a car</label>
-                        <InputInfo type="checkbox" value="Boat"/>
-                        <label> I have a boat</label>
-                        <InputInfo type="submit" value="Submit"/>
+                        <Coluna>
+                        <CheckboxEstilo type="checkbox" value="Realismo"/>
+                        <LabelC> Realismo</LabelC>
+                        <CheckboxEstilo type="checkbox" value="Caricatura"/>
+                        <LabelC> Caricatura</LabelC>
+                        <CheckboxEstilo type="checkbox" value="Estilizado"/>
+                        <LabelC> Estilizado</LabelC>
+                        </Coluna>
+                        <Coluna>
+                        <CheckboxEstilo type="checkbox" value="Semi-realismo"/>
+                        <LabelC> Semi-realismo</LabelC>
+                        <CheckboxEstilo type="checkbox" value="Tradicional"/>
+                        <LabelC> Tradicional</LabelC>
+                        </Coluna>
+                        <Coluna>
+                        <CheckboxEstilo type="checkbox" value="Digital"/>
+                        <LabelC> Digital</LabelC>
+                        <CheckboxEstilo type="checkbox" value="Aquarela"/>
+                        <LabelC> Aquarela</LabelC>
+                        <CheckboxEstilo type="checkbox" value="Acrilica"/>
+                        <LabelC> Acrílica</LabelC>
+                        </Coluna>
+                        <Coluna>
+                        <CheckboxEstilo type="checkbox" value="Anime"/>
+                        <LabelC> Anime</LabelC>
+                        <CheckboxEstilo type="checkbox" value="Ilustracao"/>
+                        <LabelC> Ilustração</LabelC>
+                        </Coluna>
+                        <Coluna>
+                        <CheckboxEstilo type="checkbox" value="C"/>
+                        <LabelC>Cartoon</LabelC>
+                        <CheckboxEstilo type="checkbox" value="Grafite"/>
+                        <LabelC> Grafite </LabelC>
+                        </Coluna>
+                        <Coluna>
+                        <CheckboxEstilo type="checkbox" value="Lapis_coloridos"/>
+                        <LabelC>Lápis coloridos</LabelC>
+                        </Coluna>
+
                     </FormEstilos>
+                    <InputBotao  type="submit" value="Submit" onClick={()=> setConfirmar('Confirmado!')}> {Confirmar}  </InputBotao>
                 </DivArtista>
             <ContainerC>
                 
-                    <EscolhaC href="#mostrar">Artista</EscolhaC> <EscolhaC href="#">Cliente</EscolhaC>
+                    <EscolhaC href="#mostrar">Artista</EscolhaC> <EscolhaC href="">Cliente</EscolhaC>
                         <FormC>
                             <TituloC>Cadastre-se</TituloC>
                             <LabelC>E-mail</LabelC>

@@ -1,5 +1,12 @@
 import styled from "styled-components"
 
+export const Coluna = styled.div`
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 10px;
+    align-content: space-around;
+`
  export const ContainerC = styled.div`
     height: 400px;
     width: 300px;
@@ -32,19 +39,26 @@ export const DivArtista = styled.div`
         display:none;
     }
 `
-export const FormC = styled.form`
-    padding: 10px;
-    display:flex;
-    flex-direction: column;
-`
 export const FormEstilos = styled.form`
     padding: 10px;
     display:flex;
     justify-content: space-around;
     flex-flow: row wrap;
     flex-direction: row;
+    align-items: baseline;
     align-content: center;
 `
+
+export const CheckboxEstilo = styled.input`
+    font-size: 5vh;
+`
+
+export const FormC = styled.form`
+    padding: 10px;
+    display:flex;
+    flex-direction: column;
+`
+
 export const EscolhaC = styled.a`
     text-decoration:none;
     font-style: normal;
@@ -71,7 +85,7 @@ export const TituloC = styled.h2`
 export const LabelC = styled.label`
     font-style: normal;
     color: #A14A76;
-    margin: 10px;
+    margin: 5px;
 `
 export const InputInfo = styled.input`
     font-style: normal;

@@ -54,12 +54,15 @@ export const ContainerHLT = styled.div`
   border-radius: 0px 0px 56px 56px;
 `
 export const StyledCarroselContainer = styled.div`
-  width: 215vh;
+  border: 1px solid black;
   display: flex;
   justify-content: end;
   align-self: stretch;
   padding-top: 50px;
-  margin-left: 250px;
+  margin-left: 30vh;
+  @media only screen and (max-width: 1366px){
+    margin-left: 5vh;
+  }
 `
 
 export const LogoTituloH = styled.div`
@@ -83,6 +86,9 @@ export const SecaoIntroducao = styled.section`
   text-align: center;
   display:flex;
   align-items: center;
+  @media only screen and (max-width: 1366px){
+    width: 45%;
+  }
 `
 
 export const IntroducaoTexto = styled.p`
@@ -91,6 +97,7 @@ export const IntroducaoTexto = styled.p`
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
+  
 `
 
 
