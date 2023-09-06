@@ -6,7 +6,7 @@ import React from "react"
 import {useNavigate } from "react-router-dom"
 import { GlobalStyle } from "../../../styledGlobal"
 
-
+//828 x 1792
 
 function Home() {
   

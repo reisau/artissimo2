@@ -54,14 +54,13 @@ export const ContainerHLT = styled.div`
   border-radius: 0px 0px 56px 56px;
 `
 export const StyledCarroselContainer = styled.div`
-  border: 1px solid black;
   display: flex;
   justify-content: end;
   align-self: stretch;
   padding-top: 50px;
   margin-left: 30vh;
   @media only screen and (max-width: 1366px){
-    margin-left: 5vh;
+    margin-left: 20vh;
   }
 `
 

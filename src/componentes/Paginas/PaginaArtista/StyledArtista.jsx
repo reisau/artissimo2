@@ -5,6 +5,10 @@ export const ContainerLogo = styled.div`
     width: 30vh;
     background-color:#FFA8A9;
     display: flex;
+    flex-direction: column;
+`
+export const DivLogo = styled.div`
+    display: flex;
     flex-direction: row;
 `
 export const LogoArtista = styled.img`
@@ -93,4 +97,28 @@ export const ColunasInfo = styled.td`
     padding-right: 40px;
     padding-top: 5px;
     padding-bottom: 5px;
+`
+export const DivConfig = styled.div`
+    margin-left: auto;
+    margin-right: auto;
+    
+`
+export const Configuracoes = styled.button`
+    font-family: Josefin sans;
+    display: block;
+    padding: auto;
+    height: 30px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #F786AA;
+    cursor: pointer;
+    font-size: 16px;
+    color:white;
+    border-radius: 10px;
+    border: none;
+
+    &:hover{
+        background-color: #eb7197;
+    }
 `

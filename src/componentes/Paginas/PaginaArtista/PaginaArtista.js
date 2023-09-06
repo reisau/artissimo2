@@ -1,7 +1,7 @@
 import React from "react"
 import logo from "../../../assets/imagens/logo.png"
 import {useNavigate} from "react-router-dom"
-import {Opcoes, Filtro, TextoLogo, LogoArtista, ContainerFiltroPFP, ContainerLogo, Tabela, EstiloTudo, EstiloColunas, Categorias, Colunas, ColunasInfo, EstiloTabela } from "./StyledArtista"
+import {DivConfig, DivLogo, Configuracoes, Opcoes, Filtro, TextoLogo, LogoArtista, ContainerFiltroPFP, ContainerLogo, Tabela, EstiloTudo, EstiloColunas, Categorias, Colunas, ColunasInfo, EstiloTabela } from "./StyledArtista"
 
 
 function PaginaArtista() {
@@ -9,12 +9,20 @@ function PaginaArtista() {
     const Voltar = () => {
       navigate(-2)
     }
+    const gotoConfiguracoes = () => {
+      navigate('/configuracoes')
+    }
     return (
         <>
             <EstiloTudo>
                 <ContainerLogo>
-                    <LogoArtista src={logo} onClick={Voltar}/>
-                    <TextoLogo onClick={Voltar}>ARTÍSSIMO</TextoLogo>
+                    <DivLogo>
+                        <LogoArtista src={logo} onClick={Voltar}/>
+                        <TextoLogo onClick={Voltar}>ARTÍSSIMO</TextoLogo>
+                    </DivLogo>
+                    <DivConfig>
+                        <Configuracoes onClick={gotoConfiguracoes}>Configurações</Configuracoes>
+                    </DivConfig>
                 </ContainerLogo>
                 
 
@@ -80,7 +88,7 @@ function PaginaArtista() {
                                     Grafite
                                 </ColunasInfo>
                                 <ColunasInfo>
-                                    Instagram(link) X
+                                    X(link)
                                 </ColunasInfo>
                             </Colunas>
                         </EstiloColunas>

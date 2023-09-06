@@ -6,6 +6,7 @@ export const Coluna = styled.div`
     flex-wrap: nowrap;
     padding: 10px;
     align-content: space-around;
+
 `
  export const ContainerC = styled.div`
     height: 400px;
@@ -25,19 +26,30 @@ export const DivTudo = styled.div`
     justify-content: space-around;
     flex-direction: row-reverse;
 `
-
 export const DivArtista = styled.div`
-    height: 400px;
-    width: 300px;
+    height: 430px;
+    width: 700px;
     background-color: #FBC2B5;
-    margin-left: auto;
+    margin-left: 5vh;
     margin-right: auto;
     margin-top:20px;
-    padding: 20px;
+    padding: 5px;    
+    display:flex;
+    flex-direction:row;
     border-radius: 30px;
     &:not(:target){
         display:none;
     }
+`
+export const DivEstilos = styled.div`
+    margin-left: auto;
+    margin-right: auto;
+    border-right: 1px solid #A14A76;
+`
+export const DivRedes = styled.div`
+    margin-left: 20px;
+    margin-right: 20px;
+
 `
 export const FormEstilos = styled.form`
     padding: 10px;
@@ -108,6 +120,26 @@ export const InputBotao = styled.button`
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
+    background-color: #F786AA;
+    cursor: pointer;
+    font-size: 17px;
+    color:white;
+    border-radius: 10px;
+    border: none;
+
+    &:hover{
+        background-color: #eb7197;
+    }
+`
+export const InputBotaoFormulario = styled.button`
+    font-family: Josefin sans;
+    display: block;
+    padding: auto;
+    height: 30px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
     background-color: #F786AA;
     cursor: pointer;
     font-size: 17px;
