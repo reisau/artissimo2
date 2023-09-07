@@ -5,4 +5,8 @@ export const StyledFooter = styled.footer`
   width: 100%;
   height: 35px;
   background-color: #F786AA;
+  @media only screen and (max-width: 414px){
+
+  }
+    
 `

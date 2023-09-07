@@ -1,7 +1,7 @@
 import Header from "../../componentes_gerais/Header/Header"
 import Footer from "../../componentes_gerais/Footer/Footer.js"
 import React from "react"
-import {ContainerC, FormC, InputInfo,LabelC, TituloC} from "../Cadastro/styledC"
+import {FormC, InputInfo,LabelC, TituloC} from "../Cadastro/styledC"
 import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
 
@@ -25,7 +25,19 @@ const BotaoEntrar = styled.button`
         background-color: #eb7197;
     }
 `
-
+export const ContainerC = styled.div`
+height: 400px;
+width: 300px;
+background-color: #FBC2B5;
+margin-left: auto;
+margin-right: auto;
+margin-top:20px;
+border-radius: 30px;
+padding: 20px;
+@media only screen and (max-width: 414px){
+    margin-bottom: 83%;
+}
+`
 function Login(){
     const navigate = useNavigate()
     const gotoArtista= () => {

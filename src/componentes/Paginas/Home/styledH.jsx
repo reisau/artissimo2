@@ -1,10 +1,19 @@
 import styled from "styled-components"
 
+export const DivCima = styled.div`
+  display:flex;
+  flex-direction:column;
+`
 export const HeaderHome = styled.header`
      width: 100%;
     height: 50px;
      z-index: 9999;
     background-color: #F786AA; 
+    @media only screen and (max-width: 414px){
+      display:flex;
+      justify-content: space-between;
+      flex-direction:row-reverse;
+  }
 `
 
 export const TrocaPagina = styled.button`
@@ -39,6 +48,12 @@ export const TituloH = styled.h1`
   font-size: 50px;
   display: inline-block;
   vertical-align: top;
+  @media only screen and (max-width: 414px){
+    margin-top: 5px;
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 40px;
+  }
 `
 
 export const ImgH = styled.img`
@@ -46,26 +61,39 @@ export const ImgH = styled.img`
   margin: 10px;
   width:300px;
   height:300px;
+  @media only screen and (max-width: 414px){
+    margin-left:auto;
+    margin-right:auto;
+    width:250px;
+    height:250px;
+  }
 `
 export const ContainerHLT = styled.div`
   width: 100%;
   height: 60vh;
   background-color: #FFA8A9;
   border-radius: 0px 0px 56px 56px;
+      @media only screen and (max-width: 414px){
+      display:flex;
+      justify-content:center;
+      height:40vh;
+  }
 `
 export const StyledCarroselContainer = styled.div`
   display: flex;
   justify-content: end;
   align-self: stretch;
   padding-top: 50px;
-  margin-left: 30vh;
-  @media only screen and (max-width: 1366px){
-    margin-left: 20vh;
-  }
+  margin-left: 40vh;
+  @media only screen and (max-width: 1365px){
+    margin-left: 6vh;
+  };
+   @media only screen and (max-width: 414px){
+    display:none;
+   }
 `
 
 export const LogoTituloH = styled.div`
-  // position: absolute;
   top: 6%;
   padding: 0;
   display: flex;
@@ -73,8 +101,17 @@ export const LogoTituloH = styled.div`
   margin-bottom: auto;
   justify-content: start;
   flex-direction: row;
+    @media only screen and (max-width: 414px){
+      flex-direction:column;
+  }
 `
-
+export const DivBaixo = styled.div`
+@media only screen and (max-width: 414px){
+  display:flex;
+  justify-content:center;
+  margin-top:30px;
+}
+`
 export const SecaoIntroducao = styled.section`
   background-color: white;
   border-radius: 20px;
@@ -85,8 +122,14 @@ export const SecaoIntroducao = styled.section`
   text-align: center;
   display:flex;
   align-items: center;
-  @media only screen and (max-width: 1366px){
-    width: 45%;
+  @media only screen and (max-width: 1365px){
+    width: 50%;
+  }
+    @media only screen and (max-width: 414px){
+      width: 80%;
+      height: 300px;
+      margin-top: 10px;
+
   }
 `
 

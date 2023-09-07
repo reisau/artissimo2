@@ -1,6 +1,6 @@
 import Carrosel from "../../componentes_gerais/Carrosel/Carrosel"
 import logo from "../../../assets/imagens/logo.png"
-import { StyledCarroselContainer, HeaderHome, TituloH, TrocaPagina, ContainerHLT, LogoTituloH, SecaoIntroducao, IntroducaoTexto, ImgH } from "./styledH"
+import { DivBaixo, DivCima, StyledCarroselContainer, HeaderHome, TituloH, TrocaPagina, ContainerHLT, LogoTituloH, SecaoIntroducao, IntroducaoTexto, ImgH } from "./styledH"
 import Footer from "../../componentes_gerais/Footer/Footer.js"
 import React from "react"
 import {useNavigate } from "react-router-dom"
@@ -23,11 +23,10 @@ function Home() {
   return (
     <>
       <GlobalStyle />
-      <HeaderHome>
-        <nav>
+      <DivCima>
+      <HeaderHome>   
         <TrocaPagina onClick={gotoCadastro}>Cadastre-se</TrocaPagina>
         <TrocaPagina onClick={gotoLogin}> Login </TrocaPagina>
-        </nav>
       </HeaderHome>
 
       <ContainerHLT>
@@ -39,6 +38,8 @@ function Home() {
           </StyledCarroselContainer>
           </LogoTituloH>
       </ContainerHLT>
+      </DivCima>
+      <DivBaixo>
       <SecaoIntroducao>
         <IntroducaoTexto>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae justo et felis interdum
@@ -48,6 +49,7 @@ function Home() {
           erat, dictum nec euismod sit amet, consequat a enim.
         </IntroducaoTexto>
       </SecaoIntroducao>
+      </DivBaixo>
       <Footer />
     </>
   )

@@ -6,15 +6,32 @@ export const ContainerLogo = styled.div`
     background-color:#FFA8A9;
     display: flex;
     flex-direction: column;
+      @media only screen and (max-width: 414px){
+        width: 100%;
+        height: 60px;
+        flex-direction:row;
+        justify-content:space-between;
+  }
+
 `
 export const DivLogo = styled.div`
     display: flex;
     flex-direction: row;
+      @media only screen and (max-width: 414px){
+        margin-left:10px;
+        margin-right:70px;
+  }
 `
 export const LogoArtista = styled.img`
-    widht: 10vh;
+    width: 10vh;
     height: 10vh;
     cursor: pointer;
+      @media only screen and (max-width: 414px){
+        width: 7vh;
+        height: 7vh;
+        margin-top:auto;
+        margin-bottom:auto;
+  }
 `
 export const TextoLogo = styled.h1`
     font-size: 14px;
@@ -34,6 +51,9 @@ export const ContainerFiltroPFP = styled.div`
     align-self: stretch;
     display:flex;
     justify-content: space-around;
+      @media only screen and (max-width: 414px){
+
+  }
 `
 export const Filtro = styled.select`
     border:none;
@@ -60,12 +80,18 @@ export const Tabela = styled.table`
     display:flex;
     flex-direction:column;
     align-self: center;
+      @media only screen and (max-width: 414px){
+        display:none;
+  }
 `
 
 export const EstiloTudo =styled.div`
     display:flex;
     flex-direction:row;
     flex-wrap:nowrap;
+      @media only screen and (max-width: 414px){
+        flex-direction:column;
+  }
 
 `
 export const EstiloTabela = styled.div`
@@ -86,7 +112,6 @@ export const Categorias = styled.th`
     padding-left: 40px;
     padding-right: 40px;
     background-color: #ffffff;
-    
 `
 
 export const Colunas = styled.tr`
@@ -101,6 +126,9 @@ export const ColunasInfo = styled.td`
 export const DivConfig = styled.div`
     margin-left: auto;
     margin-right: auto;
+      @media only screen and (max-width: 414px){
+
+  }
     
 `
 export const Configuracoes = styled.button`
@@ -120,5 +148,8 @@ export const Configuracoes = styled.button`
 
     &:hover{
         background-color: #eb7197;
-    }
+    };
+      @media only screen and (max-width: 414px){
+        margin-top:15px;
+  }
 `

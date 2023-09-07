@@ -17,6 +17,8 @@ export const Coluna = styled.div`
     margin-top:20px;
     border-radius: 30px;
     padding: 20px;
+    @media only screen and (max-width: 414px){
+    }
 `
 export const DivTudo = styled.div`
     width: 1000px;
@@ -25,6 +27,12 @@ export const DivTudo = styled.div`
     display:flex;
     justify-content: space-around;
     flex-direction: row-reverse;
+    @media only screen and (max-width: 414px){
+        justify-content:center;
+        flex-direction:column-reverse;
+        width:100%;
+        margin-bottom:83%;
+    }
 `
 export const DivArtista = styled.div`
     height: 430px;
@@ -40,11 +48,20 @@ export const DivArtista = styled.div`
     &:not(:target){
         display:none;
     }
+    @media only screen and (max-width: 414px){
+        width: 325px;
+        height: 600px;
+        flex-direction:column;
 `
 export const DivEstilos = styled.div`
     margin-left: auto;
     margin-right: auto;
     border-right: 1px solid #A14A76;
+    @media only screen and (max-width: 414px){
+        border-right: none;
+        border-bottom: 1px solid #A14A76;
+        width: 90%;
+    }
 `
 export const DivRedes = styled.div`
     margin-left: 20px;
@@ -149,6 +166,9 @@ export const InputBotaoFormulario = styled.button`
 
     &:hover{
         background-color: #eb7197;
+    }
+    @media only screen and (max-width: 414px){
+        margin-top: 10px;
     }
 `
 
