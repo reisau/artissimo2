@@ -88,6 +88,9 @@ export const StyledCarroselContainer = styled.div`
   @media only screen and (max-width: 1365px){
     margin-left: 6vh;
   };
+   @media only screen and (max-width: 1281px){
+      margin-left: 20vh;
+   };
    @media only screen and (max-width: 414px){
     display:none;
    }
@@ -129,7 +132,7 @@ export const SecaoIntroducao = styled.section`
       width: 80%;
       height: 300px;
       margin-top: 10px;
-
+      margin-bottom: 4vh;
   }
 `
 
