@@ -5,12 +5,37 @@ import React from "react"
 import '@fontsource-variable/josefin-sans'
 import { useNavigate } from "react-router-dom"
 import {useState} from "react"
+import axios from 'axios'
 
 function Cadastro() {
     const navigate = useNavigate()
-    const gotoArtista= () => {
-      navigate('/artista')
-    }
+    
+    const rotasInfo = (token)=>(
+        localStorage.setItem('token', token),
+        localStorage.setItem('email', email)
+    )
+
+    const [email, setEmail] = useState("");
+    const [senha, setPassword] = useState("");
+    const [nome, setName] = useState("");
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const data = {
+          nome,
+          email,
+          senha,
+        };
+        
+        const response = await axios.post("http://localhost:3006/api/user/create", data)
+        .then(response=>{
+            rotasInfo(response.data.token)
+            navigate('/artista')
+        })
+        
+        
+      };
 
     const [Confirmar, setConfirmar] = useState('Confirmar')
     return (
@@ -63,9 +88,9 @@ function Cadastro() {
                     </DivEstilos>
                     <DivRedes>
                 <TituloC>Suas redes sociais (Link)</TituloC>
-                    <LabelC>Intagram:</LabelC>
+                    <LabelC>Instagram:</LabelC>
                     <InputInfo type="url" />
-                    <LabelC>Twitter:</LabelC>
+                    <LabelC>X:</LabelC>
                     <InputInfo type="url"/>
                     <InputBotaoFormulario  type="submit" value="Submit" onClick={()=> setConfirmar('Confirmado!')}> {Confirmar}  </InputBotaoFormulario>
                 </DivRedes>
@@ -77,12 +102,25 @@ function Cadastro() {
                         <FormC>
                             <TituloC>Cadastre-se</TituloC>
                             <LabelC>E-mail</LabelC>
-                            <InputInfo type="email"/>
+                            <InputInfo 
+                                type="email"
+                                value={ email }
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
                             <LabelC>Nome de usuário</LabelC>
-                            <InputInfo type="text" />
+                            <InputInfo 
+                                type="text" 
+                                value={ nome }
+                                onChange={(e) => setName(e.target.value)}
+                            />
                             <LabelC>Senha</LabelC>
-                            <InputInfo type="password" />
-                            <InputBotao onClick={gotoArtista}>Cadastrar</InputBotao>                
+                            <InputInfo 
+                                type="password" 
+                                value={ senha }
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                            <InputBotao onClick={handleSubmit}>Cadastrar</InputBotao>
+                            {/* <InputBotao onClick={gotoArtista}>Cadastrar</InputBotao>                 */}
                         </FormC>
                 
             </ContainerC>

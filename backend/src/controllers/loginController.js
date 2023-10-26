@@ -11,7 +11,7 @@ const jwt = require('jsonwebtoken');
 async function login(request, response) {
     // Preparar o comando de execução no banco
     const query = "SELECT * FROM usuarios WHERE `email` = ?";
-    
+    console.log(request.body)
     // Recuperar credenciais informadas
     const params = Array(
         request.body.email
@@ -20,8 +20,10 @@ async function login(request, response) {
     // Executa a ação no banco e valida os retornos para o client que realizou a solicitação
     connection.query(query, params, (err, results) => {
         try {            
+            console.log(results)
             if (results.length > 0) {                
                 bcrypt.compare(request.body.senha, results[0].senha, (err, result) => {
+                    console.log(result)
                     if (err) {                        
                         return response.status(401).send({
                             msg: 'Email or password is incorrect!'

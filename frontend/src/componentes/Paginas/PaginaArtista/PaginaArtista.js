@@ -1,14 +1,25 @@
 import React from "react"
 import logo from "../../../assets/imagens/logo.png"
 import {useNavigate} from "react-router-dom"
+import { useEffect } from "react"
 import {DivConfig, DivLogo, Configuracoes, Opcoes, Filtro, TextoLogo, LogoArtista, ContainerFiltroPFP, ContainerLogo, Tabela, EstiloTudo, EstiloColunas, Categorias, Colunas, ColunasInfo, EstiloTabela } from "./StyledArtista"
 
 
 function PaginaArtista() {
     const navigate = useNavigate()
-    const Voltar = () => {
-      navigate(-2)
-    }
+
+    const logOut = () =>(
+        localStorage.removeItem('token'),
+        localStorage.removeItem('email'),
+        navigate('/')
+    )
+    useEffect(()=>{
+        const token = localStorage.getItem('token')
+        if (!token){
+            navigate('/')
+        }
+    }, [navigate])
+
     const gotoConfiguracoes = () => {
       navigate('/configuracoes')
     }
@@ -17,8 +28,8 @@ function PaginaArtista() {
             <EstiloTudo>
                 <ContainerLogo>
                     <DivLogo>
-                        <LogoArtista src={logo} onClick={Voltar}/>
-                        <TextoLogo onClick={Voltar}>ARTÍSSIMO</TextoLogo>
+                        <LogoArtista src={logo} onClick={logOut}/>
+                        <TextoLogo onClick={logOut}>ARTÍSSIMO</TextoLogo>
                     </DivLogo>
                     <DivConfig>
                         <Configuracoes onClick={gotoConfiguracoes}>Configurações</Configuracoes>

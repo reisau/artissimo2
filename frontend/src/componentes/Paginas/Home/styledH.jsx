@@ -89,7 +89,7 @@ export const StyledCarroselContainer = styled.div`
     margin-left: 6vh;
   };
    @media only screen and (max-width: 1281px){
-      margin-left: 20vh;
+      margin-left: 16vh;
    };
    @media only screen and (max-width: 414px){
     display:none;

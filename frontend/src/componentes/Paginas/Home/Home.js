@@ -31,7 +31,7 @@ function Home() {
 
       <ContainerHLT>
           <LogoTituloH>
-              <ImgH srcset={logo} />
+              <ImgH srcSet={logo} />
               <TituloH> ARTÍSSIMO </TituloH>
           <StyledCarroselContainer>
             <Carrosel />
@@ -42,11 +42,9 @@ function Home() {
       <DivBaixo>
       <SecaoIntroducao>
         <IntroducaoTexto>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae justo et felis interdum
-          faucibus. In at lorem sapien. Suspendisse potenti. Cras porttitor turpis sit amet consequat
-          fermentum. Morbi velit lectus, congue gravida erat ac, molestie luctus velit. Nullam fringilla,
-          magna at blandit vestibulum, nulla orci laoreet enim, in imperdiet lacus mi nec libero. Donec leo
-          erat, dictum nec euismod sit amet, consequat a enim.
+          Artíssimo é uma plataforma que visa a comunicação clara de clientes interessados em
+          obter artes, e artistas que precisam de clientes para sustentar suas vidas. Além disso
+          é uma plataforma que anseia criar uma cultura de valorização da arte no Brasil.
         </IntroducaoTexto>
       </SecaoIntroducao>
       </DivBaixo>

@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Footer from "../../componentes_gerais/Footer/Footer.js"
-import {TextoAdd, ImgRedes, LabelConfigs, InputConfigs, DivConfigs, DivBotaoConfigs, HeaderConfigs, BotaoConfigs, DivAddImg} from "./StyledConfigs.jsx"
+import {ImgRedes, LabelConfigs, InputConfigs, DivConfigs, DivBotaoConfigs, HeaderConfigs, BotaoConfigs, DivAddImg} from "./StyledConfigs.jsx"
 import instagram from "../../../assets/imagens/instagram.png"
 import X from "../../../assets/imagens/X.png"
 import {useNavigate } from "react-router-dom"
@@ -11,6 +11,14 @@ function Configs(){
     const gotoPaginaArtista = () => {
       navigate(-1)
     }
+
+        useEffect(()=>{
+        const token = localStorage.getItem('token')
+        if (!token){
+            navigate('/')
+        }
+    }, [navigate])
+
     const [Salvar, setSalvar] = useState('Salvar')
     return(
         <>
@@ -32,8 +40,8 @@ function Configs(){
                     <InputConfigs type="url"></InputConfigs>
                 </DivConfigs>
                 <DivAddImg>
-                    <TextoAdd>Tabela de preços e exemplos da sua arte (mín 1-máx 6)</TextoAdd>
-                    <BotaoConfigs>Adicionar</BotaoConfigs>
+                    <br>
+                    </br>
                 </DivAddImg>
             </div>
             <Footer/>

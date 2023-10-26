@@ -4,6 +4,8 @@ import React from "react"
 import {FormC, InputInfo,LabelC, TituloC} from "../Cadastro/styledC"
 import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
+import axios from 'axios'
+import { useState } from "react";
 
 const BotaoEntrar = styled.button`
     font-family: Josefin sans;
@@ -38,23 +40,51 @@ padding: 20px;
     margin-bottom: 83%;
 }
 `
-function Login(){
+
+function LoginPagina(){
     const navigate = useNavigate()
-    const gotoArtista= () => {
-      navigate('/artista')
-    }
+    const rotasInfo = (token)=>(
+        localStorage.setItem('token', token),
+        localStorage.setItem('email', email)
+    );
+    
+    const [email, setEmail] = useState("");
+    const [senha, setPassword] = useState("");
+
+    const handleSubmit = async (e) => { 
+        e.preventDefault();
+        
+        const data = {
+            email,
+            senha,
+        };
+
+        const response = await axios.post("http://localhost:3006/api/auth/login", data)
+        .then(response=>{
+            console.log(response.data)
+            rotasInfo(response.data.token)
+            navigate('/artista')
+            // if ()
+        })
+    };    
+    
     return(
         <>
             <Header/>
                 <ContainerC>
-                    <FormC>
+                    <FormC onSubmit={handleSubmit}>
                         <TituloC>Login</TituloC>
 
                         <LabelC>E-mail</LabelC>
-                        <InputInfo type="email" />
+                        <InputInfo type="email" value={email}
+                        onChange={(e) => setEmail(e.target.value)} 
+                        />
                         <LabelC>Senha</LabelC>
-                        <InputInfo type="password" />
-                        <BotaoEntrar onClick={gotoArtista}>Entrar</BotaoEntrar>
+                        <InputInfo className={senha !== "" ? "has-val input" : "input"}
+                        type="password"
+                        value={senha}
+                        onChange={(e) => setPassword(e.target.value)} />
+                        <BotaoEntrar type="submit">Entrar</BotaoEntrar>
                     </FormC>
                 </ContainerC>
                 <Footer/>
@@ -62,4 +92,4 @@ function Login(){
     )
 }
 
-export default Login
+export default LoginPagina
