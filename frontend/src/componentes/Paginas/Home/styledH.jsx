@@ -83,7 +83,7 @@ export const StyledCarroselContainer = styled.div`
   display: flex;
   justify-content: end;
   align-self: stretch;
-  padding-top: 50px;
+  padding-top: 30px;
   margin-left: 40vh;
   @media only screen and (max-width: 1365px){
     margin-left: 6vh;
@@ -121,7 +121,7 @@ export const SecaoIntroducao = styled.section`
   margin: 5px 50px ;
   padding: 3px;
   width: 55%;
-  height: 170px;
+  height: 25vh;
   text-align: center;
   display:flex;
   align-items: center;
@@ -142,7 +142,6 @@ export const IntroducaoTexto = styled.p`
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-  
 `
 
 

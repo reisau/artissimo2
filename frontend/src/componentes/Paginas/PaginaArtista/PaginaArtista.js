@@ -23,6 +23,8 @@ function PaginaArtista() {
     const gotoConfiguracoes = () => {
       navigate('/configuracoes')
     }
+
+    
     return (
         <>
             <EstiloTudo>
@@ -41,22 +43,25 @@ function PaginaArtista() {
                     <ContainerFiltroPFP> 
                         <Filtro>
                             <Opcoes value="0">Estilo</Opcoes>
-                            <Opcoes value="realismo">Realismo</Opcoes>
-                            <Opcoes value="semirealismo">Semi-realismo</Opcoes>
-                            <Opcoes value="cartoon">Cartoon</Opcoes>
-                            <Opcoes value="anime">Anime</Opcoes>
+                            <Opcoes value={1}>Realismo</Opcoes>
+                            <Opcoes value={11}>Semi-realismo</Opcoes>
+                            <Opcoes value={7}>Cartoon</Opcoes>
+                            <Opcoes value={8}>Anime</Opcoes>
+                            <Opcoes value={11}>Ilustração</Opcoes>
+                            <Opcoes value={10}>Estilizado</Opcoes>
+                            <Opcoes value={2}>Caricatura</Opcoes>
                         </Filtro>
                         <Filtro>
                             <Opcoes value="0">Mídia</Opcoes>
-                            <Opcoes value="Digital">Digital</Opcoes>
-                            <Opcoes value="Tradicional">Tradicional</Opcoes>
+                            <Opcoes value={3}>Digital</Opcoes>
+                            <Opcoes value={9}>Tradicional</Opcoes>
                         </Filtro>
                         <Filtro>
                             <Opcoes value="0">Material</Opcoes>
-                            <Opcoes value="Grafite">Grafite</Opcoes>
-                            <Opcoes value="Aquarela">Aquarela</Opcoes>
-                            <Opcoes value="Acrílica">Acrílica</Opcoes>
-                            <Opcoes value="Lápis coloridos">Lápis coloridos</Opcoes>
+                            <Opcoes value={4}>Grafite</Opcoes>
+                            <Opcoes value={5}>Aquarela</Opcoes>
+                            <Opcoes value={6}>Acrílica</Opcoes>
+                            <Opcoes value={13}>Lápis coloridos</Opcoes>
                         </Filtro>
                      </ContainerFiltroPFP>
                     <Tabela>

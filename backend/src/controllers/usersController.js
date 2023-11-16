@@ -53,21 +53,45 @@ async function listUsers(request, response) {
 async function storeUser(request, response) {
     // Preparar o comando de execução no banco
     const query = 'INSERT INTO usuarios(email, nome, senha, usuario_tipo, twitter, instagram) VALUES(?, ?, ?, ?, ?, ?);';
-    
+        
     // Recuperar os dados enviados na requisição
     const params = Array(
         request.body.email,
         request.body.nome,
         bcrypt.hashSync(request.body.senha, 10),
-        'cliente',
-        'teste',
-        'teste'
+        request.body.usuario_tipo,        
+        request.body.instagram,
+        request.body.x,
     );
-    console.log(params)
+    console.log(params)  
+    
     // Executa a ação no banco e valida os retornos para o client que realizou a solicitação
     connection.query(query, params, (err, results) => {
         try {
             if (results) {
+                if (request.body.usuario_tipo === 'artista') {
+                    const query = 'INSERT INTO usuario_categoria(id_usuario, id_categoria) VALUES(?, ?);';
+                    
+                    const params = Array(
+                        request.body.realismo,
+                        request.body.caricatura,
+                        request.body.estilizado,
+                        request.body.semiRealismo,
+                        request.body.tradicional,
+                        request.body.digital,
+                        request.body.aquarela,
+                        request.body.acrilica,
+                        request.body.anime,
+                        request.body.ilustracao,
+                        request.body.cartoon,
+                        request.body.lapisColorido            
+                    );
+                    
+                    params.forEach(categoria => {
+                        connection.query(query, Array(results[0].id, categoria))
+                    });
+                } 
+
                 response
                     .status(201)
                     .json({
@@ -174,7 +198,7 @@ async function deleteUser(request, response) {
             }
         } catch (e) { // Caso aconteça algum erro na execução
             response.status(400).json({
-                    succes: false,
+                    success: false,
                     message: "Ocorreu um erro. Não foi possível deletar usuário!",
                     query: err.sql,
                     sqlMessage: err.sqlMessage

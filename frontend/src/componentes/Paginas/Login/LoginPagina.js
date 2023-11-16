@@ -59,12 +59,10 @@ function LoginPagina(){
             senha,
         };
 
-        const response = await axios.post("http://localhost:3006/api/auth/login", data)
+        const responsa = await axios.post("http://localhost:3006/api/auth/login", data)
         .then(response=>{
-            console.log(response.data)
             rotasInfo(response.data.token)
             navigate('/artista')
-            // if ()
         })
     };    
     

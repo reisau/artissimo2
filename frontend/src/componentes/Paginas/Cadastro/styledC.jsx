@@ -52,6 +52,7 @@ export const DivArtista = styled.div`
         width: 325px;
         height: 600px;
         flex-direction:column;
+    }
 `
 export const DivEstilos = styled.div`
     margin-left: auto;

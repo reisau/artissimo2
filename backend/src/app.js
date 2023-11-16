@@ -5,7 +5,7 @@ const cors = require('cors');
 // Importar as rotas para serem executadas na aplicação
 const userRouter = require('./Routes/userRouter');
 const loginRouter = require('./routes/loginRouter');
-const artistasRouter = require('./Routes/artistasRouter')
+//  const artistasRouter = require('./Routes/artistasRouter')
 // Importar o pacote dotenv, gerenciador de variáveis de ambiente
 const dotenv = require('dotenv').config();
 
@@ -20,6 +20,6 @@ app.use(cors())
 app.use('/api', userRouter);
 app.use('/api/auth', loginRouter);
 // Setar a porta do servidor, a parir do arquivo .env
-app.set('port', process.env.PORT || 3333);
+app.set('port', process.env.PORT || 3006);
 
 module.exports = app;
