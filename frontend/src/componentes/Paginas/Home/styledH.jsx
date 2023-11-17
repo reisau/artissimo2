@@ -102,7 +102,7 @@ export const LogoTituloH = styled.div`
   display: flex;
   margin-top: auto;
   margin-bottom: auto;
-  justify-content: start;
+  justify-content: end;
   flex-direction: row;
     @media only screen and (max-width: 414px){
       flex-direction:column;

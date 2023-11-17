@@ -24,6 +24,7 @@ function PaginaArtista() {
       navigate('/configuracoes')
     }
 
+    axios.get('http://localhost:3006/user')
     
     return (
         <>
@@ -42,22 +43,22 @@ function PaginaArtista() {
                 <EstiloTabela>
                     <ContainerFiltroPFP> 
                         <Filtro>
-                            <Opcoes value="0">Estilo</Opcoes>
+                            <Opcoes>Estilo</Opcoes>
                             <Opcoes value={1}>Realismo</Opcoes>
                             <Opcoes value={11}>Semi-realismo</Opcoes>
                             <Opcoes value={7}>Cartoon</Opcoes>
                             <Opcoes value={8}>Anime</Opcoes>
-                            <Opcoes value={11}>Ilustração</Opcoes>
+                            <Opcoes value={12}>Ilustração</Opcoes>
                             <Opcoes value={10}>Estilizado</Opcoes>
                             <Opcoes value={2}>Caricatura</Opcoes>
                         </Filtro>
                         <Filtro>
-                            <Opcoes value="0">Mídia</Opcoes>
+                            <Opcoes>Mídia</Opcoes>
                             <Opcoes value={3}>Digital</Opcoes>
                             <Opcoes value={9}>Tradicional</Opcoes>
                         </Filtro>
                         <Filtro>
-                            <Opcoes value="0">Material</Opcoes>
+                            <Opcoes>Material</Opcoes>
                             <Opcoes value={4}>Grafite</Opcoes>
                             <Opcoes value={5}>Aquarela</Opcoes>
                             <Opcoes value={6}>Acrílica</Opcoes>

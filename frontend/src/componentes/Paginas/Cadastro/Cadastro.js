@@ -1,6 +1,6 @@
 import Footer from "../../componentes_gerais/Footer/Footer"
 import  Header  from "../../componentes_gerais/Header/Header.js"
-import { InputBotaoFormulario, DivEstilos, DivRedes, Coluna, CheckboxEstilo, FormEstilos, DivTudo, DivArtista, ContainerC, EscolhaC, FormC, TituloC, InputBotao, InputInfo, LabelC } from "./styledC"
+import {DivEstilos, DivRedes, Coluna, CheckboxEstilo, FormEstilos, DivTudo, DivArtista, ContainerC, EscolhaC, FormC, TituloC, InputBotao, InputInfo, LabelC } from "./styledC"
 import React from "react"
 import '@fontsource-variable/josefin-sans'
 import { useNavigate } from "react-router-dom"
@@ -8,8 +8,7 @@ import {useState} from "react"
 import axios from 'axios';
 
 function Cadastro() {
-    const navigate = useNavigate()
-    
+    const navigate = useNavigate();
     const rotasInfo = (token)=>(
         localStorage.setItem('token', token),
         localStorage.setItem('email', email)
