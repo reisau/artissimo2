@@ -18,10 +18,61 @@ const connection = require('../config/db');
 const bcrypt = require('bcrypt');
 
 // Função que retorna todos usuários no banco de dados
+async function filtro(request, response) {
+    const query = 'select u.nome, u.email, c.nome as categoria, u.twitter, u.instagram ' +
+    ' from usuario_categoria uc, usuarios u, categorias c ' +
+    ' where uc.id_usuario = u.id ' +
+    ' and uc.id_categoria = ?' +
+    ' and u.id = ? ;';
+
+    const params = Array(request.params.id);
+    
+
+    console.log(request.params.id)
+    connection.query(query, params, (err, results) => { 
+        try {  // Tenta retornar as solicitações requisitadas
+            console.log(results)
+            if (results) {  // Se tiver conteúdo 
+                response.status(200).json({
+                    success: true,
+                    message: 'Filtro sucesso!',
+                    data: results
+                });
+            } else {  // Retorno com informações de erros
+                response
+                    .status(400)
+                    .json({
+                        success: false,
+                        message: `Não foi possível retornar os usuários.`,
+                        query: err.sql,
+                        sqlMessage: err.sqlMessage
+                    });
+            }
+        } catch (e) {  // Caso aconteça qualquer erro no processo na requisição, retorna uma mensagem amigável
+            response.status(400).json({
+                succes: false,
+                message: "Ocorreu um erro. Não foi possível realizar sua requisição!",
+                query: err.sql,
+                sqlMessage: err.sqlMessage
+            })
+        }   
+    });
+
+}
+
 async function listUsers(request, response) {
     // Preparar o comando de execução no banco
-    connection.query('SELECT * FROM usuarios', (err, results) => { 
+    const query = 'select u.nome, u.email, c.nome as categoria, u.twitter, u.instagram ' +
+    ' from usuario_categoria uc, usuarios u, categorias c ' +
+    ' where uc.id_usuario = u.id ' +
+    ' and uc.id_categoria = c.id ' +
+    ' and u.id = ? ;';
+
+    const params = Array(request.params.id);
+    console.log(request.params.id)
+    connection.query(query, params, (err, results) => { 
         try {  // Tenta retornar as solicitações requisitadas
+            console.log(results)
             if (results) {  // Se tiver conteúdo 
                 response.status(200).json({
                     success: true,
@@ -63,7 +114,6 @@ async function storeUser(request, response) {
         request.body.instagram,
         request.body.x,
     );
-    console.log(params)  
     
     // Executa a ação no banco e valida os retornos para o client que realizou a solicitação
     connection.query(query, params, (err, results) => {
@@ -84,11 +134,11 @@ async function storeUser(request, response) {
                         request.body.anime,
                         request.body.ilustracao,
                         request.body.cartoon,
-                        request.body.lapisColorido            
+                        request.body.lapisColorido,            
                     );
                     
                     params.forEach(categoria => {
-                        connection.query(query, Array(results[0].id, categoria))
+                        connection.query(query, Array(results.insertId, categoria))
                     });
                 } 
 
@@ -211,5 +261,6 @@ module.exports = {
     listUsers,
     storeUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    filtro
 }

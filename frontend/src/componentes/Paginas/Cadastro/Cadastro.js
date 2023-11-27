@@ -47,6 +47,7 @@ function Cadastro() {
                 nome,
                 email,
                 senha,
+                'usuario_tipo': user,
                 instagram,
                 x,
                 realismo,
@@ -68,17 +69,16 @@ function Cadastro() {
                 nome,
                 email,
                 senha,
+                'usuario_tipo': user
             };
         }
-
-        
 
         console.log(data);
         alert(43)
         const response = await axios.post("http://localhost:3006/api/user/create", data)
         .then(response=>{
-            console.log(response.data)
             rotasInfo(response.data.token);
+            localStorage.setItem('@Auth:id', response.data.data.insertId);
             navigate('/artista');
         })
 

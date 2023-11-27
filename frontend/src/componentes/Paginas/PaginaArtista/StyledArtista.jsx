@@ -106,11 +106,14 @@ export const EstiloColunas = styled.div`
     margin: 5px;
     
 `
+
 export const Categorias = styled.th`
     color: #A14A76;
     border-bottom: 1px solid #A14A76;
     padding-left: 40px;
     padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color: #ffffff;
 `
 
@@ -134,6 +137,7 @@ export const DivConfig = styled.div`
 export const Configuracoes = styled.button`
     font-family: Josefin sans;
     display: block;
+    margin-top: 15px;
     padding: auto;
     height: 30px;
     width: 150px;

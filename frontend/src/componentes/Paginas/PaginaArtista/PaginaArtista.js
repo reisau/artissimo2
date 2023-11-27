@@ -1,50 +1,82 @@
-import React from "react"
+import React, { useState } from "react"
 import logo from "../../../assets/imagens/logo.png"
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
-import {DivConfig, DivLogo, Configuracoes, Opcoes, Filtro, TextoLogo, LogoArtista, ContainerFiltroPFP, ContainerLogo, Tabela, EstiloTudo, EstiloColunas, Categorias, Colunas, ColunasInfo, EstiloTabela } from "./StyledArtista"
+import axios from "axios"
+
+import { DivConfig, DivLogo, Configuracoes, Opcoes, Filtro, TextoLogo, LogoArtista, ContainerFiltroPFP, ContainerLogo, Tabela, EstiloTudo, EstiloColunas, Categorias, Colunas, ColunasInfo, EstiloTabela } from "./StyledArtista"
 
 
-function PaginaArtista() {
+function PaginaArtista(){
     const navigate = useNavigate()
+        const [usuarios, setUsuarios] = useState([])
+        const [realismo, setRealismo] = useState(null);
+        const [caricatura, setCaricatura] = useState(null);
+        const [estilizado, setEstilizado] = useState(null);
+        const [semiRealismo, setSemiRealismo] = useState(null);
+        const [tradicional, setTradicional] = useState(null);
+        const [digital, setDigital] = useState(null);
+        const [aquarela, setAquarela] = useState(null);
+        const [acrilica, setAcrilica] = useState(null);
+        const [anime, setAnime] = useState(null);
+        const [ilustracao, setIlustracao] = useState(null);
+        const [cartoon, setCartoon] = useState(null);
+        const [grafite, setGrafite] = useState(null);
+        const [lapisColorido, setLapisColorido] = useState(null);
 
-    const logOut = () =>(
-        localStorage.removeItem('token'),
-        localStorage.removeItem('email'),
-        navigate('/')
-    )
-    useEffect(()=>{
-        const token = localStorage.getItem('token')
-        if (!token){
+        const logOut = () => (
+            localStorage.removeItem('token'),
+            localStorage.removeItem('email'),
             navigate('/')
-        }
-    }, [navigate])
+        )
 
-    const gotoConfiguracoes = () => {
-      navigate('/configuracoes')
+        useEffect(() => {
+            const token = localStorage.getItem('token')
+            if (!token) {
+                navigate('/')
+            }
+        }, [navigate])
+
+        const gotoConfiguracoes = () => {
+            navigate('/configuracoes')
+        }
+
+    const fetchUsuarios = async () => {
+        const id = localStorage.getItem('@Auth:id');
+        const response = await axios.get("http://localhost:3006/api/user/" + id);
+
+        if(response.data.success) {
+            setUsuarios(response.data.data)
+        }        
     }
 
-    axios.get('http://localhost:3006/user')
-    
+    useEffect(() => {
+        fetchUsuarios()
+    }, [])
+
+    console.log(usuarios);
+
     return (
         <>
             <EstiloTudo>
                 <ContainerLogo>
                     <DivLogo>
-                        <LogoArtista src={logo} onClick={logOut}/>
+                        <LogoArtista src={logo} onClick={logOut} />
                         <TextoLogo onClick={logOut}>ARTÍSSIMO</TextoLogo>
                     </DivLogo>
                     <DivConfig>
                         <Configuracoes onClick={gotoConfiguracoes}>Configurações</Configuracoes>
                     </DivConfig>
+
                 </ContainerLogo>
-                
+
 
                 <EstiloTabela>
-                    <ContainerFiltroPFP> 
+                    <ContainerFiltroPFP>
                         <Filtro>
                             <Opcoes>Estilo</Opcoes>
-                            <Opcoes value={1}>Realismo</Opcoes>
+                            <Opcoes  value={realismo}                            
+                            onChange={(e) => setRealismo(1)}>Realismo</Opcoes>
                             <Opcoes value={11}>Semi-realismo</Opcoes>
                             <Opcoes value={7}>Cartoon</Opcoes>
                             <Opcoes value={8}>Anime</Opcoes>
@@ -64,50 +96,33 @@ function PaginaArtista() {
                             <Opcoes value={6}>Acrílica</Opcoes>
                             <Opcoes value={13}>Lápis coloridos</Opcoes>
                         </Filtro>
-                     </ContainerFiltroPFP>
+                        <Configuracoes>Pesquisar</Configuracoes>
+                    </ContainerFiltroPFP>
                     <Tabela>
                         <EstiloColunas>
                             <Colunas>
                                 <Categorias>Artista</Categorias>
-                                <Categorias>Estilo</Categorias>
-                                <Categorias>Mídia</Categorias>
-                                <Categorias>Material</Categorias>
-                                <Categorias>Redes sociais</Categorias>
+                                <Categorias>Categorias</Categorias>
+                                <Categorias>E-mail</Categorias>
+                                <Categorias>Twitter</Categorias>
+                                <Categorias>Instagram</Categorias>
                             </Colunas>
-                            <Colunas>
-                                <ColunasInfo>
-                                    Raquel
-                                </ColunasInfo>
-                                <ColunasInfo>
-                                    semi-realista
-                                </ColunasInfo>
-                                <ColunasInfo>
-                                    Digital
-                                </ColunasInfo>
-                                <ColunasInfo>
-                                    -
-                                </ColunasInfo>
-                                <ColunasInfo>
-                                    Instagram(link)
-                                </ColunasInfo>
-                            </Colunas>
-                            <Colunas>
-                                <ColunasInfo>
-                                    Liz
-                                </ColunasInfo>
-                                <ColunasInfo>
-                                    anime
-                                </ColunasInfo>
-                                <ColunasInfo>
-                                    Tradicional
-                                </ColunasInfo>
-                                <ColunasInfo>
-                                    Grafite
-                                </ColunasInfo>
-                                <ColunasInfo>
-                                    X(link)
-                                </ColunasInfo>
-                            </Colunas>
+                            
+                            {usuarios.map((usuario) => {
+                                return (
+                                    <>
+                                        <Colunas>
+                                            <Categorias>{usuario.nome}</Categorias>
+                                            <Categorias>{usuario.categoria}</Categorias>
+                                            <Categorias>{usuario.email}</Categorias>
+                                            <Categorias>{usuario.twitter}</Categorias>
+                                            <Categorias>{usuario.instagram}</Categorias>
+                                        </Colunas>
+                                    </>
+                                )
+                            })}
+                            
+                              
                         </EstiloColunas>
                     </Tabela>
                 </EstiloTabela>
@@ -115,6 +130,5 @@ function PaginaArtista() {
 
         </>
     )
-
 }
 export default PaginaArtista
